@@ -1,3 +1,5 @@
+# app.py is a streamlit app that accompanies the AWS Workshop Use Generative AI to Build a DevSecOps Chatbot
+
 import streamlit as st
 import uuid
 import sys
@@ -26,7 +28,7 @@ else:
     user_id = str(uuid.uuid4())
     st.session_state['user_id'] = user_id
 
-
+# Specify LLM
 if 'llm_chain' not in st.session_state:
     if (len(sys.argv) > 1):
         allowedLLMs = ['titan', 'claudeV2','claudeV2',"claudeInstant"]
@@ -35,14 +37,6 @@ if 'llm_chain' not in st.session_state:
         
         st.session_state['llm_app'] = titan
         st.session_state['llm_chain'] = titan.build_chain(sys.argv[1])
-        # if (sys.argv[1] == 'titan'):
-        #     st.session_state['llm_app'] = titan
-        #     st.session_state['llm_chain'] = titan.build_chain()
-        # elif (sys.argv[1] == 'claude'):
-        #     st.session_state['llm_app'] = titan
-        #     st.session_state['llm_chain'] = titan.build_chain()
-        # else:
-        #     raise Exception("Unsupported LLM: ", sys.argv[1])
     else:
         raise Exception("Usage: streamlit run app.py <anthropic|flanxl|flanxxl|openai>")
 
@@ -67,7 +61,7 @@ if "answers" not in st.session_state:
 if "input" not in st.session_state:
     st.session_state.input = ""
 
-
+# Style Markdown
 st.markdown("""
         <style>
                .block-container {
@@ -183,7 +177,6 @@ def render_sources(sources):
         with st.expander("Sources"):
             for s in sources:
                 st.write(s)
-
     
 #Each answer will have context of the question asked in order to associate the provided feedback with the respective question
 def write_chat_message(md, q):
@@ -191,8 +184,7 @@ def write_chat_message(md, q):
     with chat:
         render_answer(md['answer'])
         render_sources(md['sources'])
-    
-        
+
 with st.container():
     for (q, a) in zip(st.session_state.questions, st.session_state.answers):
         write_user_message(q)
