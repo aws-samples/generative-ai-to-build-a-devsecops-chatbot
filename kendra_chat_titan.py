@@ -11,7 +11,7 @@ from utils import bedrock, print_ww
 
 def get_titan_llm():
     bedrock_region_name='us-west-2'
-    bedrock_endpoint_url='https://prod.us-west-2.dataplane.bedrock.aws.dev'
+    bedrock_endpoint_url='https://bedrock-runtime.us-west-2.amazonaws.com'
     aws_profile=None
     
     session = boto3.Session(profile_name=aws_profile)
