@@ -195,8 +195,8 @@ input = st.text_input("You are talking to an AI, ask any question.", key="input"
 
 with st.sidebar:
     st.subheader("Sample Prompt") 
-    st.caption("what is Threat Model?")
-    st.caption("why do we need Threat Model?")
-    st.caption("Mental Model for a good threat model")
+    st.caption("What is a Threat Model?")
+    st.caption("Why do we need Threat Models?")
+    st.caption("Give me a good approach for a Threat Model")
     st.caption("")
     st.caption("")
