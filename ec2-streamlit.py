@@ -17,7 +17,7 @@ sts = boto3.client('sts')
 account_id = sts.get_caller_identity().get('Account')
 
 # Create IAM Role and Policy
-print('creating iam things...')
+print('Setting up the right permissions')
 assume_role_doc = {
     "Version": "2012-10-17",
     "Statement": [
