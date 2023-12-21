@@ -21,9 +21,6 @@ def get_titan_llm():
 
     titan_parameteres  = {'maxTokenCount':3072, 
                          "temperature":0.01,
-                         #"top_k":250,
-                          #"top_p":1,
-                          #"stop_sequences": ["\n\nHuman"]
                          }
 
     titan_llm = Bedrock(model_id = "amazon.titan-text-express-v1",
