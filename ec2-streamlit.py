@@ -130,6 +130,7 @@ cd generative-ai-to-build-a-devsecops-chatbot
 python3 -m venv .venv
 source .venv/bin/activate
 pip3 install boto3 langchain streamlit
+pip3 install -U langchain-community
 export AWS_REGION=us-west-2
 export KENDRA_INDEX_ID={kendra_index_id}
 streamlit run app.py {model_name}
