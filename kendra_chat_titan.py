@@ -1,4 +1,4 @@
-from langchain.retrievers import AmazonKendraRetriever
+from langchain_community.retrievers import AmazonKendraRetriever
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain.llms.bedrock import Bedrock
