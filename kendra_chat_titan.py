@@ -154,7 +154,7 @@ def build_chain(model="claudeV2"):
         llm=get_ai21_llm()
     
 
-    retriever = AmazonKendraRetriever(index_id=kendra_index_id,region_name=region)
+    retriever = AmazonKendraRetriever(index_id=kendra_index_id,region_name=region,min_score_confidence=0.7))
     prompt_template = """\n\nHuman:The following is a friendly conversation between a human and an AI. \
         The AI is talkative and provides lots of specific details from its <context>. If the AI does not \
         know the answer to a <question>, it truthfully says it does not know.
